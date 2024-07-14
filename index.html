@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
+
+		<title>Multi-step form</title>
+
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<section>
+			<div class="wrapper">
+				<div class="card-container">
+					<div class="steps-container">
+						<ul>
+							<li class="step">
+								<span class="step-number">1</span>
+								<div class="step-container">
+									<span>STEP 1</span>
+									<span id="step-name">YOUR INFO</span>
+								</div>
+							</li>
+							<li class="step">
+								<span class="step-number">2</span>
+								<div class="step-container">
+									<span>STEP 2</span>
+									<span id="step-name">SELECT PLAN</span>
+								</div>
+							</li>
+							<li class="step">
+								<span class="step-number">3</span>
+								<div class="step-container">
+									<span>STEP 3</span>
+									<span id="step-name">ADD-ONS</span>
+								</div>
+							</li>
+							<li class="step">
+								<span class="step-number">4</span>
+								<div class="step-container">
+									<span>STEP 4</span>
+									<span id="step-name">SUMMARY</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="form-container">
+						<!-- * Titles -->
+							<h1 id="form-title"></h1>
+							<span id="form-description">
+								
+							</span>
+						<form id="multiStepForm">
+							<!-- * Step  1 -->
+							<div class="form-wrapper">
+								<div class="personal-data">
+									<label for="name">Name</label>
+									<!-- required -->
+									<input
+									type=""
+									name="name"
+									placeholder="e.g. John Doe"
+									id="nameField"
+									/>
+									<label for="email">Email Address</label>
+									<!-- required -->
+									<input
+									type="text"
+									name="email"
+									placeholder="e.g. johndoe@gmail.com"
+									id="emailField"
+									/>
+									<label for="phone">Phone Number</label>
+									<!-- required -->
+									<input
+									type="number"
+									name="phone"
+									placeholder="e.g. +233 234 5678 590"
+									id="phoneField"
+									/>
+								</div>
+							<!-- * Step  1 finished -->
+							<!-- * frequency section -->
+							<div class="frequency-step">
+								<div class="frequency-container">
+									<div class="package-container" data-coreSubs="arcade" data-active="false">
+										<img src="./assets/images/icon-arcade.svg" alt=":(" />
+										<span id="service">Arcade</span>
+										<span id="service-cost">$9/mo</span>
+									</div>
+									<div class="package-container" data-coreSubs="advanced" data-active="false">
+										<img src="./assets/images/icon-advanced.svg" alt=":(" />
+										<span id="service">Advanced</span>
+										<span id="service-cost">$12/mo</span>
+									</div>
+									<div class="package-container" data-coreSubs="pro" data-active="false">
+										<img src="./assets/images/icon-pro.svg" alt=":(" />
+										<span id="service">Pro</span>
+										<span id="service-cost">$15/mo</span>
+									</div>
+								</div>
+								<div>
+									<span>Montly</span>
+									<input id="toggle-switch" type="checkbox" value="monthly" title="input"/>
+									<span>Yearly</span>
+								</div>
+							</div>
+							<!-- * frequency section -->
+							<div class="add-on-step">
+								<div class="add-on">
+									<input type="checkbox" class="addOnInput" title="input"/>
+									<div class="addon-description">
+										<span>Online Service</span>
+										<span>Access to multiplayer games</span>
+									</div>
+									<span id="addOnCost" data-addon="onlineService">+$1/mo</span>
+								</div>
+								<div class="add-on">
+									<input type="checkbox" class="addOnInput" title="input"/>
+									<div class="addon-description">
+										<span>Larger storage</span>
+										<span>Extra 1TB of cloud save</span>
+									</div>
+									<span id="addOnCost" data-addon="largerStorage">+$2/mo</span>
+								</div>
+								<div class="add-on">
+									<input type="checkbox" class="addOnInput" title="input"/>
+									<div class="addon-description">
+										<span>Customizable profile</span>
+										<span>Custom theme on your profile</span>
+									</div>
+									<!-- TODO: Remove after fix -->
+									<span id="addOnCost" data-addon="customProfile">+$10/mo</span>
+								</div>
+							</div>
+							<!-- * Frequency section finish -->
+							<!-- * TOTAL -->
+							<div class="finish-step">
+								<div class="resume">
+									<div>
+										<div>
+											<span id="resume-core"> Arcade (Monthly) </span>
+											<span id="resume-back"> Change </span>
+										</div>
+										<div id="core-price">$9/mo</div>
+									</div>
+									<div id="addOnServices">
+									</div>
+								</div>
+								<div class="total-container">
+									<span>Total (per month)</span>
+									<span id="total">+/$12mo</span>
+								</div>
+							</div>
+							<!-- * TOTAL -->
+							<!-- * THANKS -->
+							<div class="thank-you">
+								<img src="./assets/images/icon-thank-you.svg" alt="" />
+								<div>Thanks you!</div>
+								<div>
+									Thanks for confirming your subscription! We hope you have fun
+									using our platform. If you ever need support, please feel free
+									to email us at support@loremgaming.com.
+								</div>
+							</div>
+							<!-- * THANKS -->
+							<!-- * final button clear purple => class="confirm-btn" -->
+							<div id="mobileBackground">
+								<button id="next" value="1" type="submit">Next Step</button>
+								<button id="back" value="back" type="button">Go back</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+	<script src="./index.js" type="module"></script>
+</html>
